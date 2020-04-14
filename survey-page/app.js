@@ -4,10 +4,6 @@ import { noveltyItems } from '../novelty-items.js';
 const itemImages = document.querySelectorAll('img');
 const itemRadios = document.querySelectorAll('input');
 
-let endResults = () => {
-    noveltyItemSelected = showNewSelection.checked;
-} 
-
 
 const showNewSelection = () => {
     let randomItemOne = getRandomItem(noveltyItems);
@@ -36,7 +32,6 @@ const showNewSelection = () => {
         } else {
             itemRadio.value = randomItemThree.id;
         }
-        console.log(itemRadio.value)
     });
 
 
