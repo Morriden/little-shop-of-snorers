@@ -1,12 +1,9 @@
 import { getRandomItem, incrementTimesPicked, incrementTimesSeen, } from '../utils/utls.js';
 import { noveltyItems } from '../novelty-items.js';
-//send this array into local storage
-
 
 const itemImages = document.querySelectorAll('img');
 const itemRadios = document.querySelectorAll('input'); 
-    
-// const idTags = document.querySelectorAll('id');
+
 const votesArray = [];
 let totalChoices = 0;
 
@@ -50,10 +47,7 @@ const showNewSelection = () => {
     const seenItems = document.querySelectorAll('input');
     seenItems.forEach((item) => {
         incrementTimesSeen(item.value, votesArray);
-        console.log(votesArray);
     });
-    //const seenItems = document.querySelectorAll('img');
-    //console.log(seenItems);
 
     if (totalChoices < 24) {
         totalChoices++;
@@ -67,7 +61,5 @@ const showNewSelection = () => {
 
 document.querySelector('button').addEventListener('click', showNewSelection);
 
-// Bring three new images that dont duplicate
-// send to votes array, which images shown and picked.
+showNewSelection(); 
 
-//showNewSelection(); 

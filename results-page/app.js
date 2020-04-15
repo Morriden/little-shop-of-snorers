@@ -1,19 +1,42 @@
 const stringyarray = localStorage.getItem('ARRAY');
 let array = JSON.parse(stringyarray);
 
-console.log(array);
+var ctx = document.getElementById('myChart').getContext('2d');
+new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
 
-//const stringyitem = localStorage.getItem('ITEM');
-//let items = JSON.parse(stringyitem);
-//console.log(stringyitem);
+    // The data for our dataset
+    data: {
+        labels: array.map(item => item.id),
+        datasets: [{
+            label: 'How many times shown',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: array.map(item => item.timesSeen)
+        }]
+    },
 
-//const stringySeenItems = localStorage.getItem('SEENITEMS');
-//const seenItems = JSON.parse(stringySeenItems);
+    // Configuration options go here
+    options: {}
+});
 
-//items.forEach((item) => {
-//    incrementTimesPicked(item.id, votesArray);
-//});
-//
-//seenItems.forEach((seenItem) => {
-//    incrementTimesSeen(seenItem.id, votesArray);
-//});
+var ctxx = document.getElementById('myChartTwo').getContext('2d');
+new Chart(ctxx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: array.map(item => item.id),
+        datasets: [{
+            label: 'How many times picked',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: array.map(item => item.timesPicked)
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
