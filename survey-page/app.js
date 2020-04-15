@@ -31,6 +31,7 @@ const showNewSelection = () => {
     itemRadios.forEach((itemRadio, i) => {
         if (i === 0) {
             itemRadio.value = randomItemOne.id;
+            itemRadio.checked = true;
         } else if (i === 1) {
             itemRadio.value = randomItemTwo.id;
         } else {
